@@ -1,0 +1,10 @@
+{
+  "model": "Random Forest",
+  "predicted_class": "M",
+  "actual_class": "M",
+  "probabilities": {
+    "H": 0.48,
+    "L": 0.006666666666666667,
+    "M": 0.5133333333333333
+  }
+}

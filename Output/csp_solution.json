@@ -1,0 +1,22 @@
+{
+  "risk_level": "Medium Risk",
+  "search_path": [
+    "Medium Risk",
+    "Increase Resource Usage",
+    "Increase Class Participation",
+    "Weekly Monitoring",
+    "Academic Safe Zone"
+  ],
+  "csp_solution": {
+    "study_hours": 2,
+    "resource_sessions": 2,
+    "tutoring_days": 1,
+    "participation_sessions": 1,
+    "monitoring_sessions": 1,
+    "rest_hours": 7
+  },
+  "original_search_path_feasible": true,
+  "csp_plan_found": true,
+  "final_plan_status": "aligned_feasible",
+  "explanation": "The search-agent recommendation is feasible for Medium Risk. The CSP found a valid academic support plan that satisfies the risk-based constraints and the global workload/rest limits."
+}

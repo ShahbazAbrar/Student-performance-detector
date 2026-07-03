@@ -1,0 +1,17 @@
+Student Performance Prediction and Academic Advising System
+
+Dataset -> Preprocessing -> ML Prediction -> Risk Mapping -> BFS Search Agent -> CSP Validation -> Forward Chaining Knowledge System -> Final Recommendation
+
+Best model name: Random Forest
+Predicted class: M
+Risk level: Medium Risk
+Search path: ['Medium Risk', 'Increase Resource Usage', 'Increase Class Participation', 'Weekly Monitoring', 'Academic Safe Zone']
+CSP feasible plan: {'study_hours': 2, 'resource_sessions': 2, 'tutoring_days': 1, 'participation_sessions': 1, 'monitoring_sessions': 1, 'rest_hours': 7}
+Knowledge inference final recommendation: Immediate academic intervention required with attendance, resource, and tutoring support.
+Final combined recommendation: Aligned recommendation (aligned_feasible): follow the search path ['Medium Risk', 'Increase Resource Usage', 'Increase Class Participation', 'Weekly Monitoring', 'Academic Safe Zone'], implement the CSP plan {'study_hours': 2, 'resource_sessions': 2, 'tutoring_days': 1, 'participation_sessions': 1, 'monitoring_sessions': 1, 'rest_hours': 7}, and apply the knowledge-base guidance: Immediate academic intervention required with attendance, resource, and tutoring support.
+
+Model comparison table:
+              model  accuracy  precision   recall  f1_score  specificity  roc_auc                     confusion_matrix
+Logistic Regression  0.750000   0.766072 0.750520  0.756957     0.864950 0.887435 [[20, 0, 9], [0, 20, 5], [6, 4, 32]]
+      Decision Tree  0.697917   0.699499 0.714395  0.705527     0.843591 0.778993 [[21, 0, 8], [1, 20, 4], [8, 8, 26]]
+      Random Forest  0.791667   0.806377 0.793060  0.797823     0.886966 0.916667 [[20, 0, 9], [0, 22, 3], [5, 3, 34]]

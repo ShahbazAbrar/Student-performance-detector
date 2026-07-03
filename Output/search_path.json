@@ -1,0 +1,12 @@
+{
+  "predicted_class": "M",
+  "risk_level": "Medium Risk",
+  "search_path": [
+    "Medium Risk",
+    "Increase Resource Usage",
+    "Increase Class Participation",
+    "Weekly Monitoring",
+    "Academic Safe Zone"
+  ],
+  "final_recommendation": "Medium Risk -> Increase Resource Usage -> Increase Class Participation -> Weekly Monitoring -> Academic Safe Zone"
+}

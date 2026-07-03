@@ -1,0 +1,243 @@
+{
+  "example_case_label": "medium_risk_actual_case",
+  "initial_facts": {
+    "predicted_class": "M",
+    "risk_level": "Medium Risk",
+    "search_path": [
+      "Medium Risk",
+      "Increase Resource Usage",
+      "Increase Class Participation",
+      "Weekly Monitoring",
+      "Academic Safe Zone"
+    ],
+    "csp_solution": {
+      "study_hours": 2,
+      "resource_sessions": 2,
+      "tutoring_days": 1,
+      "participation_sessions": 1,
+      "monitoring_sessions": 1,
+      "rest_hours": 7
+    },
+    "StudentAbsenceDays": "Above-7",
+    "raisedhands": "low",
+    "VisITedResources": "low",
+    "AnnouncementsView": "moderate",
+    "Discussion": "low",
+    "ParentAnsweringSurvey": "No",
+    "ParentschoolSatisfaction": "Bad"
+  },
+  "rules_fired": [
+    "R2_predicted_medium_risk",
+    "R4_attendance_problem",
+    "R5_low_participation",
+    "R6_low_resource_usage",
+    "R8_low_discussion_engagement",
+    "R9_low_parent_involvement",
+    "R10_home_support_gap",
+    "R14_intervention_required",
+    "R15_recommend_attendance_plan",
+    "R16_recommend_resource_usage"
+  ],
+  "inferred_facts": [
+    "attendance_problem",
+    "home_support_gap",
+    "intervention_required",
+    "low_discussion_engagement",
+    "low_parent_involvement",
+    "low_participation",
+    "low_resource_usage",
+    "recommend_attendance_plan",
+    "recommend_resource_usage",
+    "student_is_medium_risk"
+  ],
+  "final_recommendation": "Immediate academic intervention required with attendance, resource, and tutoring support.",
+  "comparison_examples": [
+    {
+      "example_case_label": "medium_risk_actual_case",
+      "initial_facts": {
+        "predicted_class": "M",
+        "risk_level": "Medium Risk",
+        "search_path": [
+          "Medium Risk",
+          "Increase Resource Usage",
+          "Increase Class Participation",
+          "Weekly Monitoring",
+          "Academic Safe Zone"
+        ],
+        "csp_solution": {
+          "study_hours": 2,
+          "resource_sessions": 2,
+          "tutoring_days": 1,
+          "participation_sessions": 1,
+          "monitoring_sessions": 1,
+          "rest_hours": 7
+        },
+        "StudentAbsenceDays": "Above-7",
+        "raisedhands": "low",
+        "VisITedResources": "low",
+        "AnnouncementsView": "moderate",
+        "Discussion": "low",
+        "ParentAnsweringSurvey": "No",
+        "ParentschoolSatisfaction": "Bad"
+      },
+      "rules_fired": [
+        "R2_predicted_medium_risk",
+        "R4_attendance_problem",
+        "R5_low_participation",
+        "R6_low_resource_usage",
+        "R8_low_discussion_engagement",
+        "R9_low_parent_involvement",
+        "R10_home_support_gap",
+        "R14_intervention_required",
+        "R15_recommend_attendance_plan",
+        "R16_recommend_resource_usage"
+      ],
+      "inferred_facts": [
+        "attendance_problem",
+        "home_support_gap",
+        "intervention_required",
+        "low_discussion_engagement",
+        "low_parent_involvement",
+        "low_participation",
+        "low_resource_usage",
+        "recommend_attendance_plan",
+        "recommend_resource_usage",
+        "student_is_medium_risk"
+      ],
+      "final_recommendation": "Immediate academic intervention required with attendance, resource, and tutoring support.",
+      "inference_trace": [
+        {
+          "rule": "R2_predicted_medium_risk",
+          "justification": [
+            "predicted_class = M -> student_is_medium_risk"
+          ],
+          "new_fact": "student_is_medium_risk"
+        },
+        {
+          "rule": "R4_attendance_problem",
+          "justification": [
+            "StudentAbsenceDays = Above-7 -> attendance_problem"
+          ],
+          "new_fact": "attendance_problem"
+        },
+        {
+          "rule": "R5_low_participation",
+          "justification": [
+            "raisedhands is low -> low_participation"
+          ],
+          "new_fact": "low_participation"
+        },
+        {
+          "rule": "R6_low_resource_usage",
+          "justification": [
+            "VisITedResources is low -> low_resource_usage"
+          ],
+          "new_fact": "low_resource_usage"
+        },
+        {
+          "rule": "R8_low_discussion_engagement",
+          "justification": [
+            "Discussion = low -> low_discussion_engagement"
+          ],
+          "new_fact": "low_discussion_engagement"
+        },
+        {
+          "rule": "R9_low_parent_involvement",
+          "justification": [
+            "ParentAnsweringSurvey = No -> low_parent_involvement"
+          ],
+          "new_fact": "low_parent_involvement"
+        },
+        {
+          "rule": "R10_home_support_gap",
+          "justification": [
+            "ParentschoolSatisfaction = Bad -> home_support_gap"
+          ],
+          "new_fact": "home_support_gap"
+        },
+        {
+          "rule": "R14_intervention_required",
+          "justification": [
+            "risk or engagement signals -> intervention_required"
+          ],
+          "new_fact": "intervention_required"
+        },
+        {
+          "rule": "R15_recommend_attendance_plan",
+          "justification": [
+            "attendance_problem -> recommend_attendance_plan"
+          ],
+          "new_fact": "recommend_attendance_plan"
+        },
+        {
+          "rule": "R16_recommend_resource_usage",
+          "justification": [
+            "low_resource_usage -> recommend_resource_usage"
+          ],
+          "new_fact": "recommend_resource_usage"
+        }
+      ]
+    },
+    {
+      "example_case_label": "low_risk_contrasting_case",
+      "initial_facts": {
+        "predicted_class": "H",
+        "risk_level": "Low Risk",
+        "search_path": [
+          "Low Risk",
+          "Maintain Current Plan",
+          "Academic Safe Zone"
+        ],
+        "csp_solution": {
+          "study_hours": 4,
+          "resource_sessions": 3,
+          "tutoring_days": 0,
+          "participation_sessions": 2,
+          "monitoring_sessions": 1,
+          "rest_hours": 8
+        },
+        "StudentAbsenceDays": "Under-7",
+        "raisedhands": "high",
+        "VisITedResources": "high",
+        "AnnouncementsView": "high",
+        "Discussion": "high",
+        "ParentAnsweringSurvey": "Yes",
+        "ParentschoolSatisfaction": "Good"
+      },
+      "rules_fired": [
+        "R1_predicted_low_risk",
+        "R19_low_risk_stability",
+        "R20_maintain_current_plan"
+      ],
+      "inferred_facts": [
+        "maintain_current_plan",
+        "stable_performance",
+        "student_is_low_risk"
+      ],
+      "final_recommendation": "Maintain the current plan with light monitoring and sustain good academic habits.",
+      "inference_trace": [
+        {
+          "rule": "R1_predicted_low_risk",
+          "justification": [
+            "predicted_class = H -> student_is_low_risk"
+          ],
+          "new_fact": "student_is_low_risk"
+        },
+        {
+          "rule": "R19_low_risk_stability",
+          "justification": [
+            "Low Risk and good attendance -> stable_performance"
+          ],
+          "new_fact": "stable_performance"
+        },
+        {
+          "rule": "R20_maintain_current_plan",
+          "justification": [
+            "stable_performance and high participation -> maintain_current_plan"
+          ],
+          "new_fact": "maintain_current_plan"
+        }
+      ]
+    }
+  ]
+}
